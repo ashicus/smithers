@@ -9,7 +9,6 @@
 #
 # Commands:
 #   hubot replygif <tag> - Embed a random ReplyGif with the given tag.
-#   hubot replygif id <id> - Embed the ReplyGif with the given id
 #
 # Notes:
 #   Use 'rg' as shorthand for the 'replygif' command
@@ -23,6 +22,7 @@ apiUrl = "http://replygif.net/api/gifs?api-key=#{apiKey}"
 
 module.exports = (robot) ->
     apiCall = (msg, failMsg, query) ->
+        console.log(query);
         robot.http(apiUrl + query).get() (err, res, body) ->
             try
                 gifs = JSON.parse body
@@ -35,10 +35,10 @@ module.exports = (robot) ->
         id = msg.match[2]
         msg.send "http://replygif.net/i/#{id}.gif"
 
-    robot.respond /(replygif|rg)( me)? ([\w|\ ]+)/i, (msg) ->
+    robot.respond /(replygif|rg)( me)? ([\w|\ |,]+)/i, (msg) ->
         tag = msg.match[3]
         if tag is "id" then return # hubot's looking for an id
-        apiCall msg, "I don't know that reaction", "&tag=#{tag}"
+        apiCall msg, "I don't know that reaction", "&tag=#{tag}&tag-operator=and"
 
     robot.respond /(replygif|rg)( me)? id (\d+)/i, (msg) ->
         id = msg.match[3]

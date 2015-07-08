@@ -1,4 +1,7 @@
 # bullshit
+#
+# Commands:
+#   bullshit - call 'em out
 
 module.exports = (robot) ->
   robot.hear /(that's|such|what) bullshit/i, (msg) ->

@@ -1,15 +1,15 @@
 [
+  "hubot-business-cat",
   "hubot-diagnostics",
-  "hubot-help",
-  "hubot-heroku-keepalive",
   "hubot-google-images",
   "hubot-google-translate",
-  "hubot-pugme",
+  "hubot-help",
+  "hubot-heroku-keepalive",
   "hubot-maps",
+  "hubot-pugme",
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
   "hubot-sweet-ass",
-  "hubot-thesimpsons",
-  "hubot-business-cat"
+  "hubot-thesimpsons"
 ]

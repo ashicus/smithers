@@ -6,4 +6,4 @@
 #
 module.exports = (robot) ->
   robot.hear /jazz hands/i, (msg) ->
-    msg.send "http://i.imgur.com/3OoMF2G.gif"
+    msg.send "http://www.reactiongifs.us/wp-content/uploads/2015/04/jazz_hands_archer.gif"

@@ -21,7 +21,8 @@
     "hubot-sweet-ass": "~0.0.1",
     "hubot-scripts": ">= 2.4.2",
     "hubot-thesimpsons": ">= 0.0.0",
-    "hubot-business-cat": ">= 1.0.0"
+    "hubot-business-cat": ">= 1.0.0",
+    "hubot-plusplus": ">= 1.1.5"
   },
   "engines": {
     "node": "0.10.x"

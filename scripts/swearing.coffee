@@ -15,12 +15,12 @@
 module.exports = (robot) ->
 
   words = [
-    'arsch',
-    'arschloch',
     'arse',
     'ass',
+    'asshole',
     'bastard',
     'bitch',
+    'bitches',
     'bugger',
     'bollocks',
     'bullshit',
@@ -31,20 +31,42 @@ module.exports = (robot) ->
     'dammit',
     'dick',
     'douche',
-    'fotze',
     'fuck',
     'fucked',
+    'fucker',
+    'fuckers',
     'fucking',
-    'kacke',
+    'hell',
     'piss',
-    'pisse',
     'scheisse',
-    'schlampe',
     'shit',
-    'wank',
-    'wichser'
+    'wank'
   ]
+
+  responses = [
+    'That\'s a dollar in the swear jar!',
+    'Hey now, language!',
+    'Watch those dirty words!',
+    'Tsk tsk.'
+  ]
+
+  swearjar = {}
+  robot.brain.on 'loaded', ->
+    robot.brain.lastAccessed = new Date()
+    # console.log(robot.brain);
+    swearjar = robot.brain.data.swearjar ||= {}
+    # console.log(swearjar);
+
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
 
   robot.hear regex, (msg) ->
-    msg.send 'That\'s a dollar in the swear jar!'
+    user_name = msg.message.user.name
+    swearjar[user_name] = swearjar[user_name]+1 or 1;
+    response = "#{msg.random responses} #{user_name} owes $#{swearjar[user_name]}.00 to the swear jar."
+
+    robot.brain.data.swearjar = swearjar
+    robot.brain.emit 'save'
+    # console.log(robot.brain);
+    # robot.brain.close()
+
+    msg.send response

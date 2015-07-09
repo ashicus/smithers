@@ -20,7 +20,7 @@ twss.threshold = TWSS_THRESHOLD
 
 module.exports = (robot) ->
 
-  robot.hear /(.*)/i, (msg) ->
+  robot.hear /^(?!smithers)(.*)/i, (msg) ->
 
     message = msg.match[1]
 

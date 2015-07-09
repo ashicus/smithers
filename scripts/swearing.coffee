@@ -17,7 +17,8 @@ responses = [
   'That\'s a dollar in the swear jar!',
   'Hey now, language!',
   'Watch those dirty words!',
-  'Tsk tsk.'
+  'Tsk tsk.',
+  'How rude.'
 ]
 
 badSwears = ///
@@ -83,15 +84,17 @@ module.exports = (robot) ->
   robot.hear badSwears, (msg) ->
     incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
+
   robot.hear moderateSwears, (msg) ->
     incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
+
   robot.hear lightSwears, (msg) ->
     incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
 
   # Query swear jar
   robot.respond /how much( (money|cash))? is in the swear\s?jar/i, (msg) ->

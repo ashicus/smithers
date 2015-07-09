@@ -28,6 +28,6 @@ module.exports = (robot) ->
     probability = twss.probability(message)
 
     if probability > 0.9
-      msg.send "That's what she said."
+      msg.send "_that's what she said..._"
 
     console.log "Innuendo Probability for #{message} #{(probability * 100)/100}%"

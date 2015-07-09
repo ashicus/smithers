@@ -62,7 +62,7 @@ module.exports = (robot) ->
   robot.hear regex, (msg) ->
     user_name = msg.message.user.name
     swearjar[user_name] = swearjar[user_name]+1 or 1;
-    response = "#{msg.random responses} #{user_name} owes $#{swearjar[user_name]}.00 to the swear jar."
+    response = "#{msg.random responses} <br />#{user_name} owes $#{swearjar[user_name]}.00 to the swear jar."
 
     robot.brain.data.swearjar = swearjar
     robot.brain.emit 'save'

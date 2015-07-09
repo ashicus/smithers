@@ -6,7 +6,6 @@
 #   "twss": "0.1.6"
 #
 # Commands:
-#   Just say something like, "that was hard". Hubot will do the rest.
 #
 # Author:
 #   Jeremy Mack (mutewinter)

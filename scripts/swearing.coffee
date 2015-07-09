@@ -51,6 +51,8 @@ moderateSwears = ///
 lightSwears = ///
 \b
   ( damn
+  | damnit
+  | dammit
   | hell
   | crap(ped|ping|per|py|s)?
   | sod(ding|s)?

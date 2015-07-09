@@ -83,11 +83,11 @@ module.exports = (robot) ->
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
     msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
   robot.hear moderateSwears, (msg) ->
-    incrementJar msg.message.user.id, 0.5
+    incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
     msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
   robot.hear lightSwears, (msg) ->
-    incrementJar msg.message.user.id, 0.3
+    incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
     msg.reply "#{msg.random responses} You owe the swear jar #{amount}"
 

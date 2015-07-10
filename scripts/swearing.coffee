@@ -18,7 +18,8 @@ responses = [
   'Hey now, language!',
   'Watch those dirty words!',
   'Tsk tsk.',
-  'How rude.'
+  'How rude.',
+  'You kiss your mother with that mouth?'
 ]
 
 badSwears = ///

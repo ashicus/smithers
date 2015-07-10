@@ -29,4 +29,4 @@ module.exports = (robot) ->
     if probability > 0.9
       msg.send "_that's what she said..._"
 
-    console.log "Innuendo Probability for #{message} #{(probability * 100)/100}%"
+    # console.log "Innuendo Probability for #{message} #{(probability * 100)/100}%"

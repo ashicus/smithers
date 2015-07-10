@@ -52,9 +52,9 @@ moderateSwears = ///
 
 lightSwears = ///
 \b
-  ( damn
-  | damnit
-  | dammit
+  ( (god)?damn
+  | (god)?damnit
+  | (god)?dammit
   | hell
   | crap(ped|ping|per|py|s)?
   | sod(ding|s)?

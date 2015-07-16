@@ -1,5 +1,5 @@
 # Commands:
-#   sadface/sad face - weep uncontrollably
+#   do the robot / dance - do a little dance
 
 images = [
   'http://i.imgur.com/z8ooLEI.gif'

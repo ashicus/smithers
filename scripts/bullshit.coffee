@@ -1,8 +1,7 @@
 # bullshit
 #
 # Commands:
-#   bullshit - call 'em out
 
 module.exports = (robot) ->
   robot.hear /(that's|such|what) bullshit/i, (msg) ->
-    msg.send "http://s.mlkshk.com/r/13DRV.gif"
+    msg.send "http://www.gifwave.com/media/37901_bullshit.gif"

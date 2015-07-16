@@ -24,7 +24,7 @@ responses = [
 
 badSwears = ///
 \b
-  ( (mother)?fuck(ing|er|ed|s)?
+  ( (mother)?fuck(ing|er|ed|s|it)?
   | shit(e|ting|ter|ty|test|s)?
   | piss(ing|er|ed|s)?
   | cunt(ing|s)?

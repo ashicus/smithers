@@ -14,17 +14,17 @@ _ = require 'underscore'
 numeral = require 'numeral'
 
 responses = [
-  'That\'s a dollar in the swear jar!',
   'Hey now, language!',
   'Watch those dirty words!',
   'Tsk tsk.',
   'How rude.',
-  'You kiss your mother with that mouth?'
+  'You kiss your mother with that mouth?',
+  'My delicate sensibilities!'
 ]
 
 badSwears = ///
 \b
-  ( (mother)?fuck(ing|er|ed|s|it)?
+  ( (mother)?fuck(ing|er|ed|s|it|in)?
   | shit(e|ting|ter|ty|test|s)?
   | piss(ing|er|ed|s)?
   | cunt(ing|s)?
@@ -85,17 +85,17 @@ module.exports = (robot) ->
   robot.hear badSwears, (msg) ->
     incrementJar msg.message.user.id, 1
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} That'll be $1.00 in the swear jar!"
 
   robot.hear moderateSwears, (msg) ->
-    incrementJar msg.message.user.id, 1
+    incrementJar msg.message.user.id, 0.5
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} That'll be $0.50 in the swear jar!"
 
   robot.hear lightSwears, (msg) ->
-    incrementJar msg.message.user.id, 1
+    incrementJar msg.message.user.id, 0.25
     amount = formatAmount(getJar().users[msg.message.user.id] || 0)
-    msg.reply "#{msg.random responses} You now owe the swear jar #{amount}"
+    msg.reply "#{msg.random responses} That'll be $0.25 in the swear jar!"
 
   # Query swear jar
   robot.respond /how much( (money|cash))? is in the swear\s?jar/i, (msg) ->

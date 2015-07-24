@@ -13,7 +13,7 @@
 # Revised:
 #   John Weis (weisjohn)
 
-TWSS_THRESHOLD = 0.98
+TWSS_THRESHOLD = 0.99
 
 twss = require('twss')
 twss.threshold = TWSS_THRESHOLD

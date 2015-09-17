@@ -6,7 +6,7 @@
 #
 # Commands:
 #   flip <text> - express your anger
-#   rage flip <text> - express your anger with rage
+#   rageflip <text> - express your anger with rage
 #   unflip <text>
 #
 # Authors:
@@ -17,8 +17,8 @@ flip = require 'flip'
 
 module.exports = (robot) ->
 
-  robot.hear /(rage )?flip( .*)?$/i, (msg) ->
-    if msg.match[1] == 'rage '
+  robot.hear /(rage)?flip( .*)?$/i, (msg) ->
+    if msg.match[1] == 'rage'
       guy = '(ノಠ益ಠ)ノ彡'
     else
       guy = '(╯°□°）╯︵'

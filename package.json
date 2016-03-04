@@ -24,6 +24,7 @@
     "hubot-troll": ">= 0.0.0",
     "hubot-business-cat": ">= 1.0.0",
     "hubot-plusplus": ">= 1.1.5",
+    "hubot-soon": ">= 1.0.0",
     "magicball": ">= 0.1.0",
     "underscore": ">= 1.8.3",
     "numeral": ">= 1.5.3",
